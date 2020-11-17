@@ -17,7 +17,7 @@
         </div>
         <div class="row">
             <div class="col-sm-2" style="background-color:lavender;"><h2 style="text-align: center;">Glossary</h2>
-            <ul class="nav flex-column">
+              <ul class="nav flex-column">
                 <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                 <ul>
                     <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
@@ -68,28 +68,41 @@
             <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center; color: goldenrod;">Welcome!</h2>
                 <br>
             <!--Content of the page-->
-                <p style="font-size: large; color: black; text-align: center;">Hi! We are Sparsh Sinha and Sourav Pal.<br>
-                This is our submission for the Innovative Work of Discrete Strcutures(CO205).
-                <br>
-                This is a one stop solution for all algorithms that are needed in our study of Discrete Strutures in the 3rd sem.
-                <br>
-                The left side of the website shows the available content, clicking on any one of them would take you to the desired page.
-                <br>
-                We have created this with the hope that it may help the students in whatever little amount it could. Hopefully you like it.</p>
-                <br>
-                <br>
-                <p style="font-size: large; color: grey; text-align: left;">Created by -<br></p>
-                    <p style="font-size: large; color: black; text-align: left;">
-                    &emsp;Sourav Pal<br>
-                    &emsp;2k19/CO/386<br>
-                    <a href="https://www.linkedin.com/in/sourav-pal-32034318a/">&emsp;Linkedin Account</a><br>
-                    <br>
-                    &emsp;Sparsh Sinha<br>
-                    &emsp;2k19/CO/388<br>
-                    <a href="https://www.linkedin.com/in/sparsh-sinha-127885191/">&emsp;Linkedin Account</a>
-                </p> 
-                <p style="font-size: small;color: grey;text-align: right;"><a href = "https://github.com/benasus25/Discrete-project" target="_blank">Click here for the github repository of the code!</a></p>
-          </div>
+            <div class="container">
+                <table class="table table-dark table-hover">
+                  <thead>
+                    <tr>
+                      <th>P</th>
+                      <th>Q</th>
+                      <th><%= expression %></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>F</td>
+                      <td>F</td>
+                      <td><%= answer['0'] %></td>
+                    </tr>
+                    <tr>
+                      <td>F</td>
+                      <td>T</td>
+                      <td><%= answer['1'] %></td>
+                    </tr>
+                    <tr>
+                      <td>T</td>
+                      <td>F</td>
+                      <td><%= answer['2'] %></td>
+                    </tr>
+                    <tr>
+                        <td>T</td>
+                        <td>T</td>
+                        <td><%= answer['3'] %></td>
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+                
+            </div>
           </div>
         </body>
 </html>
