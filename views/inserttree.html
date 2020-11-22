@@ -21,7 +21,7 @@
                     <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                     <ul>
                         <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
-                        <li class = "nav-item"><a href="thetano">Notation</a></li>
+                        <li class = "nav-item"><a href="thetano">Theta Notation</a></li>
                         <li class = "nav-item"><a href= "bigono">Big-O Notation</a></li>
                         <li class = "nav-item"><a href="omegano">Omega Notation</a></li>
                     </ul>
@@ -35,13 +35,7 @@
                         <li class="nav-item"><a href ="selectionsort">Selection Sort</a></li>
                         <li class="nav-item"><a href = "bubblesort">Bubble Sort</a></li>
                         <li class="nav-item"><a href = "insertionsort">Insertion Sort</a></li>
-                        <li class="nav-item"><a href = "mergesort">Merge Sort</a></li>
                         <li class="nav-item"><a href = "countingsort">Counting Sort</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Divide and Conquer</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
-                        <li class="nav-item"><a href ="mergesort">Merge Sort</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Graph Algorithms</h6></li>
                     <ul>
@@ -49,7 +43,7 @@
                         <li class="nav-item"><a href = "dfs">Depth First Search(DFS)</a></li>
                         <li class="nav-item"><a href = "prim">Prim Algorithm</a></li>
                         <li class="nav-item"><a href = "kruskal">Kruskal Algorithm</a></li>
-                        <li class="nav-item"><a href = "warshall">Warshall Alorithm</a></li>
+                        <li class="nav-item"><a href = "warshall">Dijkstra Alorithm</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Tree Operations</h6></li>
                     <ul>
@@ -64,7 +58,33 @@
                     </ul>
                 </ul>  
             </div>
-            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2></div>  
+            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2>
+            <p style="font-size: large; color: black; text-align: left;">
+            This is used to insert a specific node in binary search tree.<br>
+            <br>Pseudo-Code <br>
+            Tree-Insert(T, z){where T is the root node and z is the element to be inserted.}<br>
+            <ol>
+                <li>y = NULL, x = T.root</li>
+                <li>While x != NULL, y =x<br>
+                If z.key < x.key, x =x.left<br>
+                else x = x.right</li>
+                <li>z.p = y</li>
+                <li>
+                    If y == NULL, T.root = z
+                </li>
+                <li>elseif z.key < y.key, y.left = z
+                </li>
+                <li>
+                    else y.right = z
+                </li>
+            </ol>
+            </p>
+            <p style="font-size: large; color: black; text-align: left;">
+                Time-Complexity: O(h), where h is the height of the tree<br>
+                Proof of Time Complexity -<br>
+                Just like, Tree-Search, Tree-Insert begins at the root of the tree and the pointer x traces a simple path downward looking for a NULL to replace it with z.
+                </p>
+            </div>  
           </div>
         </body>
 </html>

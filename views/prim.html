@@ -21,27 +21,16 @@
                     <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                     <ul>
                         <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
-                        <li class = "nav-item"><a href="thetano">Notation</a></li>
+                        <li class = "nav-item"><a href="thetano">Theta Notation</a></li>
                         <li class = "nav-item"><a href= "bigono">Big-O Notation</a></li>
                         <li class = "nav-item"><a href="omegano">Omega Notation</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Searching Algorithms</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href="linearsearch">Linear Search</a></li>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp; Sorting Algorithms</h6></li>
                     <ul>
                         <li class="nav-item"><a href ="selectionsort">Selection Sort</a></li>
                         <li class="nav-item"><a href = "bubblesort">Bubble Sort</a></li>
                         <li class="nav-item"><a href = "insertionsort">Insertion Sort</a></li>
-                        <li class="nav-item"><a href = "mergesort">Merge Sort</a></li>
                         <li class="nav-item"><a href = "countingsort">Counting Sort</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Divide and Conquer</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
-                        <li class="nav-item"><a href ="mergesort">Merge Sort</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Graph Algorithms</h6></li>
                     <ul>
@@ -49,7 +38,7 @@
                         <li class="nav-item"><a href = "dfs">Depth First Search(DFS)</a></li>
                         <li class="nav-item"><a href = "prim">Prim Algorithm</a></li>
                         <li class="nav-item"><a href = "kruskal">Kruskal Algorithm</a></li>
-                        <li class="nav-item"><a href = "warshall">Warshall Alorithm</a></li>
+                        <li class="nav-item"><a href = "warshall">Dijkstra Alorithm</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Tree Operations</h6></li>
                     <ul>
@@ -64,7 +53,29 @@
                     </ul>
                 </ul>  
             </div>
-            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2></div>  
+            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2>
+                <p style="font-size: large; color: black; text-align: left;">Prim's (also known as Jarník's) algorithm is a greedy algorithm that finds a minimum spanning tree for a weighted undirected graph. This means it finds a subset of the edges that forms a tree that includes every vertex, where the total weight of all the edges in the tree is minimized. The algorithm operates by building this tree one vertex at a time, from an arbitrary starting vertex, at each step adding the cheapest possible connection from the tree to another vertex.<br>
+                <br>Pseudo-Code<br>
+                <ol>
+                    <li>
+                        Create a Min Heap of size V where V is the number of vertices in the given graph. Every node of min heap contains vertex number and key value of the vertex.
+                    </li>
+                    <li>
+                        Initialize Min Heap with first vertex as root (the key value assigned to first vertex is 0). The key value assigned to all other vertices is INF (infinite).
+                    </li>
+                    <li>While Min Heap is not empty, do following 
+                        <ul>
+                            <li>Extract the min value node from Min Heap. Let the extracted vertex be u.</li>
+                            <li>For every adjacent vertex v of u, check if v is in Min Heap (not yet included in MST). If v is in Min Heap and its key value is more than weight of u-v, then update the key value of v as weight of u-v.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p style="font-size: large; color: black; text-align: left;">
+                    Time-Complexity: O(ElogV), where V is number of vertices and E is number of edges.
+                    <br>Proof of Time Complexity<br>
+                    The time complexity of the above code/algorithm looks O(V^2) as there are two nested while loops. If we take a closer look, we can observe that the statements in inner loop are executed O(V+E) times (similar to BFS). The inner loop has decreaseKey() operation which takes O(LogV) time. So overall time complexity is O(E+V)*O(LogV) which is O((E+V)*LogV) = O(ELogV) (For a connected graph, V = O(E))
+                </p>
+            </div>  
           </div>
         </body>
 </html>

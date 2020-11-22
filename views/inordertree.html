@@ -21,7 +21,7 @@
                     <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                     <ul>
                         <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
-                        <li class = "nav-item"><a href="thetano">Notation</a></li>
+                        <li class = "nav-item"><a href="thetano">Theta Notation</a></li>
                         <li class = "nav-item"><a href= "bigono">Big-O Notation</a></li>
                         <li class = "nav-item"><a href="omegano">Omega Notation</a></li>
                     </ul>
@@ -35,13 +35,7 @@
                         <li class="nav-item"><a href ="selectionsort">Selection Sort</a></li>
                         <li class="nav-item"><a href = "bubblesort">Bubble Sort</a></li>
                         <li class="nav-item"><a href = "insertionsort">Insertion Sort</a></li>
-                        <li class="nav-item"><a href = "mergesort">Merge Sort</a></li>
                         <li class="nav-item"><a href = "countingsort">Counting Sort</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Divide and Conquer</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
-                        <li class="nav-item"><a href ="mergesort">Merge Sort</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Graph Algorithms</h6></li>
                     <ul>
@@ -49,7 +43,7 @@
                         <li class="nav-item"><a href = "dfs">Depth First Search(DFS)</a></li>
                         <li class="nav-item"><a href = "prim">Prim Algorithm</a></li>
                         <li class="nav-item"><a href = "kruskal">Kruskal Algorithm</a></li>
-                        <li class="nav-item"><a href = "warshall">Warshall Alorithm</a></li>
+                        <li class="nav-item"><a href = "warshall">Dijkstra Alorithm</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Tree Operations</h6></li>
                     <ul>
@@ -64,7 +58,62 @@
                     </ul>
                 </ul>  
             </div>
-            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2></div>  
+            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2>
+            <p style="font-size: large; color: black; text-align: left;">
+                Inorder is one of the depth-first search traversal algorithms in a binary tree where the left child is traversed first followed by the root node followed by the right child.
+                <br><br>
+                Pseudo-Code<br>
+                inorder-tree-walk(x){where x is the root of the tree}
+                <ol>
+                    <li>
+                        If x is not equal to NIL
+                    </li>
+                    <li>
+                        inorder-tree-walk(x.left)
+                    </li>
+                    <li>
+                        print(x.data)
+                    </li>
+                    <li>
+                        inorder-tree-walk(x.right) 
+                    </li>
+                </ol></p>
+                <p style="font-size: large; color: black; text-align: left;">
+                    The time complexity of the inorder-tree-walk in an n-node tree is 𝛩(n)
+                <br><br>
+                Proof of time complexity-<br>
+                <ul>
+                    <li>
+                        Since the algorithm traverses every node, so T(n) = gamma(n) --(i)
+                    </li>
+                    <li>
+                        The algorithm takes constant time on an empty subtree, so T(0) = c    
+                    </li>
+                    <li>
+                        Now consider a tree with n>0, if the algorithm is called on the node x, let the number of nodes in the left subtree is k, and the number of nodes in the right subtree is n-k-1
+                        The T(n) <= T(k) + T(n-k-1) + d for some constant d > 0 and it reflects the upper bound on T(n), exclusive of the recursive calls.
+                    </li>
+                    <li>
+                        According to the substitution method, T(n) = O(n), if T(n) <= (c+d)n+c
+                    </li>
+                    <li>
+                        Now, for n = 0, (c+d) * 0 + c = c = T(0)
+                    </li>
+                    <li>
+                        For n > 0, <br>
+                        T(n) <= T(k) + T(n-k-1) + d <br>
+	                    = ((c+d)*k + c) + ((c+d)*(n-k-1) + c) + d <br>
+	                    = (c+d)*n + c
+                    </li>
+                    <li>
+                        Hence, T(n) = O(n) --(ii)
+                    </li>
+                    <li>
+                        From (i) and (ii), T(n) = 𝛩(n) 
+                    </li>
+                </ul>
+                </p>
+            </div>  
           </div>
         </body>
 </html>

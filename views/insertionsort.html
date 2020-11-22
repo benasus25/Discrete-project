@@ -21,7 +21,7 @@
                     <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                     <ul>
                         <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
-                        <li class = "nav-item"><a href="thetano">Notation</a></li>
+                        <li class = "nav-item"><a href="thetano">Theta Notation</a></li>
                         <li class = "nav-item"><a href= "bigono">Big-O Notation</a></li>
                         <li class = "nav-item"><a href="omegano">Omega Notation</a></li>
                     </ul>
@@ -35,13 +35,7 @@
                         <li class="nav-item"><a href ="selectionsort">Selection Sort</a></li>
                         <li class="nav-item"><a href = "bubblesort">Bubble Sort</a></li>
                         <li class="nav-item"><a href = "insertionsort">Insertion Sort</a></li>
-                        <li class="nav-item"><a href = "mergesort">Merge Sort</a></li>
                         <li class="nav-item"><a href = "countingsort">Counting Sort</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Divide and Conquer</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
-                        <li class="nav-item"><a href ="mergesort">Merge Sort</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Graph Algorithms</h6></li>
                     <ul>
@@ -49,7 +43,7 @@
                         <li class="nav-item"><a href = "dfs">Depth First Search(DFS)</a></li>
                         <li class="nav-item"><a href = "prim">Prim Algorithm</a></li>
                         <li class="nav-item"><a href = "kruskal">Kruskal Algorithm</a></li>
-                        <li class="nav-item"><a href = "warshall">Warshall Alorithm</a></li>
+                        <li class="nav-item"><a href = "warshall">Dijkstra Alorithm</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Tree Operations</h6></li>
                     <ul>
@@ -64,7 +58,27 @@
                     </ul>
                 </ul>  
             </div>
-            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2></div>  
+            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2>
+                <p style="font-size: large; color: black; text-align: left;">
+                    Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.<br>
+                    <br>Pseudo-Code<br>
+                    insertionsort(A){where A is the array to be sorted}
+                    <ol>
+                        <li>For j = 2 to A.length</li>
+                        <li>Key = A[ j ]</li>
+                        <li>I = j-1</li>
+                        <li>While i > 0 and A[i] > key<br>
+                            A[i+1] = A[i]<br>
+                            I = i - 1               
+                        </li>
+                        <li> A[i+1] = key</li>
+                    </ol>
+                    <p style="font-size: large; color: black; text-align: left;">
+                        Time-Complexity: O(n^2)<br>
+                        Proof of Time Complexity<br>
+                        In worst case, for every iteration of outer loop, inner loop runs completely and hence time complexity is O(n^2)    
+                    </p>
+            </div>  
           </div>
         </body>
 </html>

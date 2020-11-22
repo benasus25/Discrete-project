@@ -21,7 +21,7 @@
                     <li class ="nav-item"><h6>&ensp;Time Complexity</h6></li>
                     <ul>
                         <li class = "nav-item"><a href ="aanalysis"> Asymptotic Analysis </a></li>
-                        <li class = "nav-item"><a href="thetano">Notation</a></li>
+                        <li class = "nav-item"><a href="thetano">Theta Notation</a></li>
                         <li class = "nav-item"><a href= "bigono">Big-O Notation</a></li>
                         <li class = "nav-item"><a href="omegano">Omega Notation</a></li>
                     </ul>
@@ -35,13 +35,7 @@
                         <li class="nav-item"><a href ="selectionsort">Selection Sort</a></li>
                         <li class="nav-item"><a href = "bubblesort">Bubble Sort</a></li>
                         <li class="nav-item"><a href = "insertionsort">Insertion Sort</a></li>
-                        <li class="nav-item"><a href = "mergesort">Merge Sort</a></li>
                         <li class="nav-item"><a href = "countingsort">Counting Sort</a></li>
-                    </ul>
-                    <li class ="nav-item"><h6>&ensp;Divide and Conquer</h6></li>
-                    <ul>
-                        <li class="nav-item"><a href = "binarysearch">Binary Search</a></li>
-                        <li class="nav-item"><a href ="mergesort">Merge Sort</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Graph Algorithms</h6></li>
                     <ul>
@@ -49,7 +43,7 @@
                         <li class="nav-item"><a href = "dfs">Depth First Search(DFS)</a></li>
                         <li class="nav-item"><a href = "prim">Prim Algorithm</a></li>
                         <li class="nav-item"><a href = "kruskal">Kruskal Algorithm</a></li>
-                        <li class="nav-item"><a href = "warshall">Warshall Alorithm</a></li>
+                        <li class="nav-item"><a href = "warshall">Dijkstra Alorithm</a></li>
                     </ul>
                     <li class ="nav-item"><h6>&ensp;Tree Operations</h6></li>
                     <ul>
@@ -64,7 +58,52 @@
                     </ul>
                 </ul>  
             </div>
-            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2></div>  
+            <div class="col-sm-10" style="background-color:lavenderblush;"><h2 style="text-align: center;">Theory</h2>
+                <p style="font-size: large; color: black; text-align: left;">
+                    Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root node in the case of a graph) and explores as far as possible along each branch before backtracking<br>
+                    <br>Pseudo-Code<br>
+                    DFS(G) {where G is the graph}
+                    <ol>
+                        <li>
+                            For each vertex u ⊆ G.v<br>
+                            u.color = white<br>
+                            u.π = NIL<br>
+                        </li>
+                        <li>
+                            TIME = 0
+                        </li>
+                        <li>
+                            For each vertex u ⊆ G.v
+                        </li>
+                        <li>
+                            If u.color == white<br>
+                            DFS-VISIT(G, u)
+                        </li>
+                    </ol>
+                    DFS-VISIT(G, u)
+                    <ol>
+                        <li>Time = time + 1</li>
+                        <li>u.d = time</li>
+                        <li>u.color = gray</li>
+                        <li>For each v ⊆ G.adj[u]<br>
+                            If v.color == white<br>
+                            v.π = u<br>
+                            DFS-VISIT(G, v)                     
+                        </li>
+                        <li>u.color = black</li>
+                        <li>Time = time + 1</li>
+                        <li>u.f = time</li>
+                    </ol>
+                </p>
+                <p style="font-size: large; color: black; text-align: left;">
+                    Time complexity: O(V + E), where V is number of vertices and E is number of edges.<br>
+                    Proof of time complexity<br>
+                    The loops on lines 1–3 and lines 5–7 of DFS
+                    take time 𝛩(V), exclusive of the time to execute the calls to DFS-VISIT . As we did for breadth-first search, we use aggregate analysis. The procedure DFS-VISIT is called exactly once for each vertex v ⊆ V , since the vertex u on which DFS-VISIT is invoked must be white and the first thing DFS-VISIT does is paint vertex u gray.
+                    During an execution of DFS-VISIT (G, v), the loop on lines 4–7 executes |Adj[ v ]| times. Since |Adj[ v ]| = 𝛩(E), the total cost of executing lines 4–7 of DFS-VISIT is 𝛩(E). The running time of
+                    DFS is therefore 𝛩(V + E).
+                </p>
+            </div>  
           </div>
         </body>
 </html>
