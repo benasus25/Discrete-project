@@ -5,6 +5,8 @@ const truth_value = require('./js/truth');
 const app = express();
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
+app.use(express.static('images'))
+
 app.listen(3000);
 app.set('view engine', 'ejs')
 
